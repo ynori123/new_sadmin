@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">来週月曜日から日曜日までのシフト</h2>
+<p>※入れない日は空欄にしてください。</p>
+<p>※入れる時間を入力してください(18時:「18」を入力、ランチ:「11.5」を入力、18時半:「18.5」を入力)</p>
+<form action="#" method="post">
+    <label for="name">なまえ</label>
+    <input type="text" name="name" id="name" required>
+    <label for="name" style="color: red;">*必須</label>
+    {% for i in range(7) %}
+    <!-- week = list('月火水木金土日') -->
+    <div>{{week[i]}}曜日のシフト</div>
+    <label for="form{{i}}">入れる時間</label>
+    <input type="text" name="form{{i}}" id="form{{i}}" value="{{ data[i] }}" required>
+    <label for="form{{i}}" style="color: red;">*必須</label>
+    {% endfor %}
+    <br><br><input type="submit" value="送信する">
+</form>
+{% endblock %}

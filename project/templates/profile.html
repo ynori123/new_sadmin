@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  {{ name }}
+</h1>
+<ul>
+  <li>時給：{{ wages }}</li>
+</ul>
+<h2>直近のシフト</h2>
+{% for i in range(shift|length) %}
+{{ shift[i] }}
+{% endfor %}
+{% endblock %}
