@@ -11,8 +11,6 @@
 <ul>{{ recent_shift }}</ul>
 
 <content>
-  {% for i in log %}
-    {{ i[0]|e }}  {{ i[1]|e }}  {{ i[2]|e }}
-  {% endfor %}
+  {{ log[0]|e }}  {{ log[1]|e }}  {{ log[2]|e }}
 </content>
 {% endblock %}

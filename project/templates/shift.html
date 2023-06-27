@@ -1,21 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
+{{ message }}
 {% for i in range(7) %}
   <h2>{{ week[i] }}曜日のシフト</h2>
-  <table border="1">
-    <tr>
-      <th>名前</th>
-      <th>ポジション</th>
-      <th>出勤時間</th>
-    </tr>
-    {% for j in range(data[i]|length) %}
-      <tr>
-        <td>{{ data[i][j]['name'] }}</td>
-        <td>{{ data[i][j]['position'] }}</td>
-        <td>{{ data[i][j]['begin'] }}</td>
-      </tr>
-    {% endfor %}
-  </table>
+  <div class="columns is-centered column is-narrow">
+    <table class="table is-bordered is-center">
+        <tr class="">
+          <th>名前</th>
+          <th>ポジション</th>
+          <th>出勤時間</th>
+        </tr>
+        {% for j in range(data[i]|length) %}
+          <tr>
+            <td>{{ data[i][j]['name'] }}</td>
+            <td>{{ data[i][j]['position'] }}</td>
+            <td>{{ data[i][j]['begin'] }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+  </div>
 {% endfor %}
 {% endblock %}

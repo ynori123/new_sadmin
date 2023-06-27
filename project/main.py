@@ -1,20 +1,30 @@
-from flask import Blueprint,render_template, request,jsonify
+from flask import Blueprint,render_template, request,jsonify,send_from_directory, url_for
 from flask_login import login_required,current_user
 from . import db
+import queue
 
 main = Blueprint('main', __name__)
+
+message = ()
+
+import os
+@main.route('/favicon.ico')
+def favicon():
+    return send_from_directory(
+        os.path.join(main.root_path, 'static'),
+        'favicon.ico', mimetype='image/vnd.microsoft.icon'
+    )
 
 import datetime
 @main.route('/')
 def index():
     dt :datetime = datetime.datetime.now()
+    message = [dt.date(), 'hello', "Admin"]
     return render_template(
         'index.html',
         recent = "a",
         today = dt.date(),
-        log = [
-            ("2023-02-22", "シフトを更新しました。", "Admin"),
-        ]
+        log = message
     )
 from .models import User
 @main.route('/profile')

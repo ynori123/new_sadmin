@@ -40,9 +40,9 @@ class FinalShift(db.Model):
 
 class Admin(db.Model):
     # ユニークID
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True)
     # ユーザ名
-    username = db.Column(db.String(40), unique=True, nullable=False)
+    username = db.Column(db.String(40), unique=True)
     # パスワード
-    password = db.Column(db.String(100), nullable=False)
+    password = db.Column(db.String(100))
     

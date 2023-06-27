@@ -1,10 +1,18 @@
-from flask import Blueprint,render_template, redirect, url_for,request, flash
+from flask import Blueprint,render_template, redirect, url_for,request, flash,send_from_directory
 from werkzeug.security import generate_password_hash, check_password_hash
 from .models import User
 from flask_login import login_user, logout_user
 from . import db
 
 auth = Blueprint('auth', __name__)
+
+import os
+@auth.route('/favicon.ico')
+def favicon():
+    return send_from_directory(
+        os.path.join(auth.root_path, 'static'),
+        'favicon.ico', mimetype='image/vnd.microsoft.icon'
+    )
 
 # ログイン
 @auth.route('/login')

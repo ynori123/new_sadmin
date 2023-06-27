@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shift-Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+</head>
+
+<body>
+    <section class="hero is-primary is-fullheight">
+
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{{ url_for('admin.index') }}" class="navbar-item">
+                                ホーム
+                            </a>
+                            <a href="{{ url_for('admin.employee') }}" class="navbar-item">
+                                従業員の情報
+                            </a>
+                            <a href="{{ url_for('admin.message') }}" class="navbar-item">
+                                メッセージ
+                            </a>
+                            <a href="{{ url_for('admin.edit') }}" class="navbar-item">
+                                シフトを確認・作成する
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div style="width: 100%; height: 4px; background-color: rgb(125, 155, 152);"></div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
