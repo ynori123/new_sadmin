@@ -1,12 +1,35 @@
 {% extends "base_admin.html" %}
 
 {% block content %}
-<h1 class="title">
-  Shift-Admin
-  {{ today }}
+<h1 class="title is-2" style="margin-top: 0;" >
+  従業員の情報
 </h1>
-<h2 class="subtitle">
-    シフト管理者画面
-</h2>
+<table >
+  <thead>
+
+  </thead>
+</table>
+<div class="columns is-centered column is-narrow">
+  <table class="table is-bordered is-center">
+    <tr class="is-selected">
+      <th>名前</th>
+      <th>時給</th>
+      <th>メールアドレス</th>
+    </tr>
+    {% for i in data %}
+    <tr class="hov">
+      <td><a href="/admin/employee/{{i[0]}}">{{ i[0] }}</a></td>
+      <td>{{ i[1] }}</td>
+      <td>{{ i[2] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<p>名前をクリックすると従業員の情報を変更できます。</p>
+<style>
+  .hov:hover{
+    background-color: aquamarine;
+  }
+</style>
 
 {% endblock %}

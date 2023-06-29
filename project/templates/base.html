@@ -42,6 +42,9 @@
                             <a href="{{ url_for('auth.logout') }}" class="navbar-item">
                                 ログアウト
                             </a>
+                            <a href="{{ url_for('admin.index') }}" class="navbar-item">
+                                管理者画面
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -52,6 +55,7 @@
             <div class="container has-text-centered">
                {% block content %}
                {% endblock %}
+               <h1 class="subtitle">※未完成</h1>
             </div>
         </div>
     </section>

@@ -1,0 +1,46 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+<h1 class="title is-2" style="margin-top: 0;" >
+  従業員の情報
+</h1>
+<table >
+  <thead>
+
+  </thead>
+</table>
+<div class="columns is-centered column is-narrow">
+  <table class="table is-bordered is-center">
+    <tr class="">
+      <th>名前</th>
+      <th>時給</th>
+      <th>メールアドレス</th>
+      <th>パスワード変更</th>
+    </tr>
+    <form method="post">
+    <tr>
+      <td>
+        <input class="input" type="text" name="name" id="name" value="{{ data[0] }}" placeholder="名前">
+      </td>
+      <td>
+        <input class="input" type="text" name="wages" id="wages" value="{{ data[1] }}" placeholder="時給">
+      </td>
+      <td>
+        <input class="input" type="email" name="email" id="email" value="{{ data[2] }}" placeholder="メールアドレス">
+      </td>
+      <td>
+        <input class="input" type="password" name="password" placeholder="パスワード変更">
+        
+      </td>
+    </tr>
+    
+  </table>
+</div>
+<p></p>
+<p>ユーザを削除するときは、メールアドレスを空欄に（削除）してください</p>
+<input class="button" type="submit" class="tag is-info" value="更新する">
+</form>
+
+
+
+{% endblock %}

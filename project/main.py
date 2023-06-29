@@ -112,7 +112,6 @@ def shift():
             }
             shifts_data.append(shift_data)
         data.append(shifts_data)
-    json_data = jsonify(data)
     # return json_data[0][0]
     return render_template(
         "shift.html",

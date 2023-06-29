@@ -33,6 +33,9 @@
                             <a href="{{ url_for('admin.edit') }}" class="navbar-item">
                                 シフトを確認・作成する
                             </a>
+                            <a href="{{ url_for('main.index') }}" class="navbar-item">
+                                従業員ページ
+                            </a>
                             
                         </div>
                     </div>
@@ -44,9 +47,11 @@
             <div class="container has-text-centered">
                {% block content %}
                {% endblock %}
+               <h1 class="subtitle">※未完成</h1>
             </div>
         </div>
     </section>
+    
 </body>
 
 </html>
