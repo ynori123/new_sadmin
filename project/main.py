@@ -46,10 +46,11 @@ from .shift import escape
 @login_required
 def shiftform():
     if request.method == 'POST':
+        user = request.form.get('username')
         # 初めての送信からどうかを確かめる
         try:
             # 初めてであれはここでエラー
-            query = db.session.query(FinalShift).filter_by(name=current_user.name).all()
+            query = db.session.query(FinalShift).filter_by(name=user).all()
             for item in query:
                 item.begin = escape(request.form.get('form'+str(i)))
             db.session.commit()
@@ -59,17 +60,8 @@ def shiftform():
                 db.session.add(
                     PostedShift(
                         dayofweek = i,
-                        name = current_user.name,
+                        name = user,
                         begin = escape(request.form.get('form'+str(i)))
-                    )
-                )
-                db.session.commit()
-                db.session.add(
-                    FinalShift(
-                        dayofweek = i,
-                        name = current_user.name,
-                        begin = escape(request.form.get('form'+str(i))),
-                        position = "A"
                     )
                 )
                 db.session.commit()
@@ -77,10 +69,11 @@ def shiftform():
         return request.form
 
     elif request.method == 'GET':
+        user = current_user.name
         data :list[str] = []
         try:
             # すでに入力したデータを取り出す
-            query = db.session.query(FinalShift).filter_by(name=current_user.name).all()
+            query = db.session.query(FinalShift).filter_by(name=user).all()
             for item in query:
                 data.append(item.begin)
 
@@ -93,7 +86,7 @@ def shiftform():
             week = list('月火水木金土日'),
             nextweek = list('月火水木金土日'),
             data = data,
-            user = current_user.name,
+            user = user,
         )
 from .models import FinalShift
 @main.route('/shift', methods=['GET'])

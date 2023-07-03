@@ -1,0 +1,39 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+<h1 class="title is-2" style="margin-top: 0;" >
+  提出されたシフト
+</h1>
+<div style="height: 20;"></div>
+<form method="post">
+{% for i in range(7) %}
+<h2 class="subtitle is-5">{{week_list[i]}}曜日</h2>
+<div class="columns is-centered column is-narrow">
+  <table class="table is-bordered is-center">
+    <tr class="is-selected">
+      <th>名前</th>
+      <th>出勤可能時間</th>
+      <th>出勤させる時間</th>
+      <th>ポジション</th>
+    </tr>
+    {% for j in data[i] %}
+    <tr class="hov">
+      <td>{{ j[0] }}</a></td>
+      <td>{{ j[1] }}</td>
+      <td><input type="text" name="week{{i}}begin" placeholder="出勤時間"></td>
+      <td><input type="text" name="week{{i}}begin" placeholder="ポジション"></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+<input type="submit" value="シフトを確定させて公開">
+</form>
+{% endfor %}
+<p>ポジションと出勤させる時間を入力してください。</p>
+<style>
+  .hov:hover{
+    background-color: aquamarine;
+  }
+</style>
+
+{% endblock %}

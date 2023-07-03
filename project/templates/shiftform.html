@@ -9,6 +9,7 @@
 </div>
 <form action="#" method="post">
     <div style="padding: 15px 0 0;"></div>
+    <input type="hidden" name="username" value="{{user}}">
     {% for i in range(7) %}
     <!-- week = list('月火水木金土日') -->
     <div>{{week[i]}}曜日のシフト</div>

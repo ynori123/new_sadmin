@@ -12,7 +12,7 @@ class User(UserMixin, db.Model):
     # 名前
     name = db.Column(db.String(1000),unique=True)
     # 時給
-    wages = db.Column(db.Integer)
+    wages = db.Column(db.Integer, default=900)
 
 # 提出されたシフト
 class PostedShift(db.Model):
