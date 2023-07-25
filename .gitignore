@@ -2,3 +2,4 @@ instance/
 .webassts-cache
 requirements.txt
 auth/
+*.csv
