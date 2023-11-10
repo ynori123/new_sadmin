@@ -29,35 +29,35 @@ PythonのFlaskを用いたアルバイト先のシフト管理Webアプリケー
 1. 雇用主は管理者画面にログインし、過去の提出されたシフトを削除して今週のシフトを募集します。
 
     ログイン
-    <img src="./.img/login.png">
+    <img src="./.github/login.png">
     「シフトを募集する」を選択
-    <img src="./.img/img00.png">    
+    <img src="./.github/img00.png">    
     「はい」を選択
-    <img src="./.img/img0.png">
+    <img src="./.github/img0.png">
 1. 従業員はシフト提出画面からその週のシフトを提出します。
 
-    <img src="./.img/img1.png">
+    <img src="./.github/img1.png">
 1. 雇用主は管理者画面からログインし、提出されたシフトを確認します。
 
     「ログイン」
-    <img src="./.img/login.png">
-    <img src="./.img/img2.png">
+    <img src="./.github/login.png">
+    <img src="./.github/img2.png">
 1. 提出されたシフトを確認したら、誰を何時から働かせるかを入力します。
 
     フォーム内に何時から出勤にするかを入力します。
-    <img src="./.img/img2.png">
+    <img src="./.github/img2.png">
     その日は出勤させない時は、無入力もしくは'x'を入力します。
-    <img src="./.img/img3.png">
+    <img src="./.github/img3.png">
 1. 誰を何時から働かせるかを入力したら、誰をどのポジションで働かせるかを入力します。
 
-    <img src="./.img/img4.png">
+    <img src="./.github/img4.png">
 1. ポジションを入力したら、シフトを確定させて公開します。
 
-    <img src="./.img/img5.png">
+    <img src="./.github/img5.png">
 
 1. これで従業員からシフトが確認できるようになります。
 
-    <img src="./.img/img6.png">
+    <img src="./.github/img6.png">
 
 
 ### 実装
