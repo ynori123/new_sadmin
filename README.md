@@ -64,14 +64,7 @@ PythonのFlaskを用いたアルバイト先のシフト管理Webアプリケー
 1. Pythonのインストール
 1. フレームワークのインストール     
     Flask, Flask-login, Flask SQLAlchemyをインストールします。
-    
-1. データベースの初期化
-    ```Python
-    % python3
-    >>> from app import app, db
-    >>> with app.app_context():
-    >>>     db.create_all()
-    ```
+   
 名前と出勤可能時間の列には、出勤できないと提出したアルバイトの情報をのぞいた`PostedShift`の内容が表示されており、それを加味して出勤させる人の出勤時間とポジションを入力することで、`FinalShift`データベースに情報が反映され、アルバイトがシフトを確認できるようになります。
 
 ### データベース
